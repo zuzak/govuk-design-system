@@ -1,6 +1,6 @@
 ---
 applications:
-- name: govuk-design-system-production
+- name: govuk-design-system-prototype-q4-s1
   memory: 64M
   path: ./deploy
   buildpack: staticfile_buildpack
