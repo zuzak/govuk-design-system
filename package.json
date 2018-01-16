@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@govuk-frontend/all": "0.0.21-alpha",
+    "node-github-graphql": "^0.2.6",
     "scss-to-json": "^2.0.0"
   },
   "devDependencies": {

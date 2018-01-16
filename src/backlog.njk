@@ -1,20 +1,16 @@
-
-<div class="govuk-mb-5 govuk-u-core-19">
-  <div class="govuk-o-site-width-container app-c-site-width-container">
-
-      <div class="govuk-o-grid">
-
-        <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds govuk-u-mb-5">
+<div class="govuk-o-width-container app-c-site-width-container">
+    <div class="govuk-o-grid govuk-o-main-wrapper">
+      <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
           
-          <h2 class="heading-large">Design System Backlog</h2>
+          <h2 class="govuk-heading-xl">Design System Backlog</h2>
 
-          <p>This is the backlog of styles, components and patterns that the government design community is currently working on. Select an item to find out more on GitHub.</p>
+          <p class="govuk-body">This is the backlog of styles, components and patterns that the government design community is currently working on. Select an item to find out more on GitHub.</p>
 
 
         {% set columns = backlog.data.repository.project.columns.nodes %}
-        {% set inProgress = columns[2].cards.edges %}
-        {% set agreed = columns[1].cards.edges %}
-        {% set proposed = columns[0].cards.edges %}
+        {% set proposed = columns[1].cards.edges %}
+        {% set agreed = columns[2].cards.edges %}
+        {% set inProgress = columns[3].cards.edges %}
 
 
         <table class="govuk-c-table">
@@ -51,11 +47,11 @@
         </table>
 
 
-        <h3 class="heading-medium">Proposals</h3>
+        <h3 class="govuk-heading-l">Proposals</h3>
 
-        <p>The following styles, components and patterns have been proposed by the community but have not yet been added to the backlog.</p>
+        <p class="govuk-body">The following styles, components and patterns have been proposed by the community but have not yet been added to the backlog.</p>
 
-        <p><a href="#">Propose a new style, component or pattern</a></p>
+        <p class="govuk-body"><a href="#">Propose a new style, component or pattern</a></p>
 
         <table class="govuk-c-table">
           <tr>
@@ -73,8 +69,6 @@
           {% endfor %}
           
         </table>
-
-        </div>
 
       </div>
   </div>
