@@ -1,10 +1,32 @@
 <div class="govuk-o-width-container app-c-site-width-container">
+
+    {% from "breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+    {{ govukBreadcrumbs({
+      "items": [
+        {
+          "text": "About",
+          "href": "/"
+        },
+        {
+          "text": "Backlog"
+        }
+      ]
+    }) }}
+
+
     <div class="govuk-o-grid govuk-o-main-wrapper">
       <div class="govuk-o-grid__item govuk-o-grid__item--two-thirds">
           
-          <h2 class="govuk-heading-xl">Design System Backlog</h2>
+          <h2 class="govuk-heading-xl">GOV.UK Design System Backlog</h2>
 
-          <p class="govuk-body">This is the backlog of styles, components and patterns that the government design community is currently working on. Select an item to find out more on GitHub.</p>
+          <p class="govuk-body">
+            This is the backlog of styles, components and patterns for the GOV.UK Design System. 
+            Select an item to find out more on GitHub.
+          </p>
+
+
+        <p class="govuk-body"><a href="https://github.com/alphagov/govuk-design-system-backlog/issues/new">Propose a new style, component or pattern on GitHub</a></p>
 
 
         {% set columns = backlog.data.repository.project.columns.nodes %}
@@ -13,49 +35,40 @@
         {% set inProgress = columns[3].cards.edges %}
 
 
-        <table class="govuk-c-table">
-          <tr>
-            <th class="govuk-c-table__header">Name</th>
-            <th class="govuk-c-table__header">Status</th>
-          </tr>
 
+          <table class="govuk-c-table">
+          <tr>
+            <th class="govuk-c-table__header">Work in progress</th>
+          </tr>
           {% for card in inProgress %}
           <tr>
           {% if card.node.content.title %}
             <td class="govuk-c-table__cell">
               <a href="{{ card.node.content.url }}">{{ card.node.content.title }}</a>
             </td>
-            <td class="govuk-c-table__cell">
-              In progress
-            </td>
           {% endif %}
           </tr>
           {% endfor %}
+          </table>
 
+          <table class="govuk-c-table">
+          <tr>
+            <th class="govuk-c-table__header">Backlog</th>
+          </tr>
           {% for card in agreed %}
           <tr>
           {% if card.node.content.title %}
             <td class="govuk-c-table__cell">
               <a href="{{ card.node.content.url }}">{{ card.node.content.title }}</a>
             </td>
-            <td class="govuk-c-table__cell">
-            </td>
           {% endif %}
           </tr>
           {% endfor %}
-          
-        </table>
-
-
-        <h3 class="govuk-heading-l">Proposals</h3>
-
-        <p class="govuk-body">The following styles, components and patterns have been proposed by the community but have not yet been added to the backlog.</p>
-
-        <p class="govuk-body"><a href="https://github.com/alphagov/govuk-design-system-backlog/issues/new">Propose a new style, component or pattern on GitHub</a></p>
+          </table>
 
         <table class="govuk-c-table">
           <tr>
-            <th class="govuk-c-table__header">Name</th>
+            <th class="govuk-c-table__header">Proposals</th>
           </tr>
 
           {% for card in proposed %}

@@ -1,0 +1,75 @@
+---
+title: Get started
+section: About
+layout: layout-doc.njk
+---
+
+{% from "_example.njk" import example %}
+
+
+This guide explains how to create prototypes using the GOV.UK Design System and GOV.UK Prototype Kit.
+
+## Before you start
+
+To make prototypes using the new Design System you will need to download and install a new version of the GOV.UK Prototype Kit. The installation process is the same as for the current version.
+
+* [Download the new version of the GOV.UK Prototype Kit](https://govuk-prototype-kit-beta.herokuapp.com/)
+* [Follow these installation instructions](https://govuk-prototype-kit-beta.herokuapp.com/docs/install/introduction)
+
+The rest of the guide assumes that you are familar with the GOV.UK Prototype Kit.
+
+## Using the new Prototype Kit
+
+The new version of the Prototype Kit is identical to the one you may have used before except that it uses our new frontend framework, GOV.UK Frontend.
+
+This means that any code that you copy across from old prototypes will not display correctly.
+Instead, you should use the examples from the GOV.UK Design System.
+
+## Styling content
+
+The GOV.UK Design System provides lots of new CSS classes for styling content. The idea is that you will rarely need to write your own Sass or CSS.
+
+The class names follow the [BEM naming convention](https://en.bem.info/methodology/). This can look a bit daunting at first, but it makes for more robust and easier to maintain code. 
+
+There are 2 ways to apply styles to content.
+
+### Using a prose scope wrapper
+
+To give basic HTML elements a default GOV.UK style, wrap them in a ‘prose-scope’ div, like this: 
+
+{{ example({group: 'styles', item: 'typography', example: 'prose-scope', html: true, open: true}) }}
+
+### Styling individual elements
+
+If you need more control you should add classes to the individual elements instead of using prose-scope. Avoid styling individual elements within a prose scope wrapper.
+
+Explore the [Styles section of the Design System](/styles/) to see what classes are available. 
+
+## Using components
+
+Components are reusable user interface elements. The components in the Design System are designed to be accessible and responsive. 
+
+There are 2 ways to use components. 
+
+You can either use the component HTML or a Nunjucks Macro. 
+
+Copy the code into your prototype where you want the component to appear.
+
+You can get the code from the HTML or Nunjucks tabs below any examples:
+
+{{ example({group: 'components', item: 'button', example: 'default', html: true, nunjucks: true, open: false}) }}
+
+### Using Nunjucks macros
+
+A Nunjucks macro is a simple template that generates more complex HTML.
+
+Nunjucks macros save you time by managing repetative or error-prone tasks, 
+like linking form labels to their controls.
+
+Nunjucks macros also make it easier to keep your prototypes up-to-date. 
+You can run a command to update component code instead of having to manually update your HTML.
+
+When using Nunjucks macros in the Prototype Kit:
+
+* omit the first line that starts with "{% raw %}{% from {% endraw %}...".
+* save and preview regularly to check that the macro is working  

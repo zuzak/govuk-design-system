@@ -1,0 +1,40 @@
+{% extends "_generic.njk" %}
+
+{% block body %}
+<div class="app-o-pane__body">
+  <div class="app-o-pane__subnav app-u-hide-mobile">
+    {% include "_subnav.njk" %}
+  </div>
+  <div class="app-o-pane__content">
+    <main id="content" class="app-c-content" role="main">
+      <div class="app-c-content__header">
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">
+          {% if theme %}
+            {{ theme }}
+            {% else %}
+              {{ section }}
+            {% endif %}
+          </span>
+          {{ title }}
+          {% if status %}
+          <div>
+            <strong class="govuk-c-tag govuk-!-mt-r4 govuk-!-mb-r2">
+              {{ status }}
+            </strong>
+            <p class="govuk-body">{{ statusMessage | safe }}</p>
+          </div>
+          {% endif %}
+        </h1>
+      </div>
+      <div class="govuk-prose-scope">
+        {{ contents | safe }}      
+      </div>
+    </main>
+    {# No JS fallback to show overview #}
+    <div class="app-o-pane__subnav-mobile-overview app-u-hide-desktop">
+      {% include "_subnav.njk" %}
+    </div>
+    {% include "_footer.njk" %}
+  </div>
+{% endblock %}
