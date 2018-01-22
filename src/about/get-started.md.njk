@@ -27,7 +27,10 @@ Instead, you should use the examples from the GOV.UK Design System.
 
 ## Styling content
 
-The GOV.UK Design System provides lots of new CSS classes for styling content. The idea is that you will rarely need to write your own Sass or CSS.
+The GOV.UK Design System provides lots of new CSS classes for styling content. 
+There are classes for layout, typography and for applying custom widths, padding and margins. 
+
+The idea is that you will rarely need to write your own Sass or CSS.
 
 The class names follow the [BEM naming convention](https://en.bem.info/methodology/). This can look a bit daunting at first, but it makes for more robust and easier to maintain code. 
 
@@ -37,15 +40,37 @@ There are 2 ways to apply styles to content.
 
 To give basic HTML elements a default GOV.UK style, wrap them in a ‘prose-scope’ div, like this: 
 
-{{ example({group: 'styles', item: 'typography', example: 'prose-scope', html: true, open: true}) }}
+<pre class="govuk-!-mb-r6"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-prose-scope"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>A H1 heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>A paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>An unordered list:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>apples<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>oranges<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>pears<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
 
 ### Styling individual elements
 
-If you need more control you should add classes to the individual elements instead of using prose-scope. Avoid styling individual elements within a prose scope wrapper.
+If you need more control you should add classes to the individual elements instead of using prose-scope.
+Here's the example above but with individually styled elements. 
 
-{{ example({group: 'styles', item: 'typography', example: 'captions', html: true, open: true}) }}
+<pre class="govuk-!-mb-r6"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-heading-xl"</span>&gt;</span>A H1 heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-body"</span>&gt;</span>A paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-body"</span>&gt;</span>An unordered list:<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-list govuk-list--bullet"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>apples<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>oranges<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>pears<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
 
-Explore the [Styles section of the Design System](/styles/) to see what classes are available. 
+Avoid styling elements or embedding components inside a prose scope wrapper.
+
+[Explore the Styles section of the Design System](/styles/) to see the full range. 
+
+
 
 ## Using components
 
