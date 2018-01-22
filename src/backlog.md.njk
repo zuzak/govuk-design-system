@@ -1,0 +1,66 @@
+---
+title: Backlog
+section: About
+layout: layout-pane.njk
+---
+            
+
+This is the backlog of styles, components and patterns for the GOV.UK Design System. 
+
+Select an item to find out more on GitHub.
+
+{% set columns = backlog.data.repository.project.columns.nodes %}
+{% set proposed = columns[1].cards.edges %}
+{% set agreed = columns[2].cards.edges %}
+{% set inProgress = columns[3].cards.edges %}
+
+<table class="govuk-c-table">
+<tr>
+  <th class="govuk-c-table__header">Work in progress</th>
+</tr>
+{% for card in inProgress %}
+<tr>
+{% if card.node.content.title %}
+  <td class="govuk-c-table__cell">
+    <a href="{{ card.node.content.url }}">{{ card.node.content.title }}</a>
+  </td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
+
+<table class="govuk-c-table">
+<tr>
+  <th class="govuk-c-table__header">Backlog</th>
+</tr>
+{% for card in agreed %}
+<tr>
+{% if card.node.content.title %}
+  <td class="govuk-c-table__cell">
+    <a href="{{ card.node.content.url }}">{{ card.node.content.title }}</a>
+  </td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>
+
+<table class="govuk-c-table">
+<tr>
+  <th class="govuk-c-table__header">Proposals</th>
+</tr>
+
+{% for card in proposed %}
+<tr>
+{% if card.node.content.title %}
+  <td class="govuk-c-table__cell">
+    <a href="{{ card.node.content.url }}">{{ card.node.content.title }}</a>
+  </td>
+{% endif %}
+</tr>
+{% endfor %}
+
+</table>
+
+## Can't find what you need?
+
+[Propose a new style, component or pattern on GitHub](https://github.com/alphagov/govuk-design-system-backlog/issues/new)

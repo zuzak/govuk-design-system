@@ -1,7 +1,7 @@
 ---
 title: Get started
 section: About
-layout: layout-doc.njk
+layout: layout-pane.njk
 ---
 
 {% from "_example.njk" import example %}
@@ -11,34 +11,33 @@ This guide explains how to create prototypes using the GOV.UK Design System and 
 
 ## Before you start
 
-To make prototypes using the new Design System you will need to download and install a new version of the GOV.UK Prototype Kit. The installation process is the same as for the current version.
+To make prototypes you will need to download and install a new version of the GOV.UK Prototype Kit which has been built to work with the Design System while it’s in private beta.
 
-* [Download the new version of the GOV.UK Prototype Kit](https://govuk-prototype-kit-beta.herokuapp.com/)
-* [Follow these installation instructions](https://govuk-prototype-kit-beta.herokuapp.com/docs/install/introduction)
+The installation process is the same as for the current version. You should:
+
+* [download the new version of the GOV.UK Prototype Kit](https://govuk-prototype-kit-beta.herokuapp.com/)
+* [follow these installation instructions](https://govuk-prototype-kit-beta.herokuapp.com/docs/install/introduction)
 
 The rest of the guide assumes that you are familar with the GOV.UK Prototype Kit.
 
 ## Using the new Prototype Kit
 
-The new version of the Prototype Kit is identical to the one you may have used before except that it uses our new frontend framework, GOV.UK Frontend.
+The new version of the Prototype Kit is identical to the one you may have used before except that it uses a new frontend framework called GOV.UK Frontend.
 
-This means that any code that you copy across from old prototypes will not display correctly.
-Instead, you should use the examples from the GOV.UK Design System.
+This means that any code that you copy across from old prototypes will not display correctly. Instead, you should use the code provided in the Design System.
 
 ## Styling content
 
-The GOV.UK Design System provides lots of new CSS classes for styling content. 
-There are classes for layout, typography and for applying custom widths, padding and margins. 
+The Design System provides lots of new CSS classes for styling content, meaning you shouldn’t need to write your own Sass or CSS.
 
-The idea is that you will rarely need to write your own Sass or CSS.
-
-The class names follow the [BEM naming convention](https://en.bem.info/methodology/). This can look a bit daunting at first, but it makes for more robust and easier to maintain code. 
+The class names follow the [BEM naming convention](https://en.bem.info/methodology/quick-start/). This can look a bit daunting at first, but it makes for more robust code that’s easier to maintain.
 
 There are 2 ways to apply styles to content.
 
+
 ### Using a prose scope wrapper
 
-To give basic HTML elements a default GOV.UK style, wrap them in a ‘prose-scope’ div, like this: 
+To give basic HTML elements a default GOV.UK style, wrap them in a ‘govuk-prose-scope’ div, like this:
 
 <pre class="govuk-!-mb-r6"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-prose-scope"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>A H1 heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
@@ -53,8 +52,7 @@ To give basic HTML elements a default GOV.UK style, wrap them in a ‘prose-scop
 
 ### Styling individual elements
 
-If you need more control you should add classes to the individual elements instead of using prose-scope.
-Here's the example above but with individually styled elements. 
+If you need more control you can add classes to the individual elements instead of using the prose-scope wrapper. Avoid styling individual elements within a prose-scope wrapper. 
 
 <pre class="govuk-!-mb-r6"><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-heading-xl"</span>&gt;</span>A H1 heading<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"govuk-body"</span>&gt;</span>A paragraph.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
@@ -66,35 +64,31 @@ Here's the example above but with individually styled elements.
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
 
-Avoid styling elements or embedding components inside a prose scope wrapper.
 
-[Explore the Styles section of the Design System](/styles/) to see the full range. 
-
+Explore the [Styles section of the Design System](/styles/) to see what classes are available. 
 
 
 ## Using components
 
-Components are reusable user interface elements. The components in the Design System are designed to be accessible and responsive. 
+Components are reusable user interface elements. The components in the Design System are designed to be accessible and responsive.
 
-There are 2 ways to use components. 
-
-You can either use the component HTML or a Nunjucks Macro. 
-
-Copy the code into your prototype where you want the component to appear.
+There are 2 ways to use components in the Design System. You can either use HTML or a Nunjucks Macro.
 
 You can get the code from the HTML or Nunjucks tabs below any examples:
 
+
 {{ example({group: 'components', item: 'button', example: 'default', html: true, nunjucks: true, open: false}) }}
+
+Copy the code into your prototype where you want the component to appear.
+
 
 ### Using Nunjucks macros
 
 A Nunjucks macro is a simple template that generates more complex HTML.
 
-Nunjucks macros save you time by managing repetative or error-prone tasks, 
-like linking form labels to their controls.
+Nunjucks macros save you time by managing repetitive or error-prone tasks, like linking form labels to their controls.
 
-Nunjucks macros also make it easier to keep your prototypes up-to-date. 
-You can run a command to update component code instead of having to manually update your HTML.
+Nunjucks macros also make it easier to keep your prototypes up to date. You can run a command to update component code instead of having to manually update your HTML.
 
 When using Nunjucks macros in the Prototype Kit:
 
