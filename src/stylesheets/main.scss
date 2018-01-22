@@ -4,18 +4,19 @@
 $app-light-grey: #f8f8f8;
 
 // App-specific components
-@import "components/header";
-@import "components/navigation";
-@import "components/mobile-navigation";
-@import "components/divider";
-@import "components/masthead";
-@import "components/footer";
-@import "components/subnav";
-@import "components/pane";
-@import "components/example";
-@import "components/tabs";
-@import "components/highlight";
 @import "components/contact-panel";
+@import "components/divider";
+@import "components/example";
+@import "components/footer";
+@import "components/header";
+@import "components/highlight";
+@import "components/masthead";
+@import "components/mobile-navigation";
+@import "components/navigation";
+@import "components/pane";
+@import "components/subnav";
+@import "components/tabs";
+@import "components/tag";
 
 body {
   margin: 0;
@@ -157,6 +158,7 @@ $mq-breakpoint-widescreen: 1200px;
   &:active,
   &:visited,
   &:hover {
+    @include govuk-font-regular-16;
     position: absolute;
     z-index: 1;
     top: $govuk-spacing-scale-3;
@@ -167,6 +169,11 @@ $mq-breakpoint-widescreen: 1200px;
     background-color: $govuk-white;
     text-decoration: none;
     text-transform: uppercase;
+
+    .govuk-prose-scope & {
+      color: $govuk-button-colour; // A specific selector to override .govuk-prose-scope a:link
+      background-color: $govuk-white; // A specific selector to override .govuk-prose-scope a:focus
+    }
   }
 }
 
