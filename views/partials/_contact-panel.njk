@@ -1,7 +1,17 @@
-<h2 class="govuk-heading-l">Get in touch</h2>
+
+{% if issue %}
+<h2 class="govuk-heading-l">Discuss this page</h2>
+
 <p class="govuk-body">
-	If you’ve got a question, idea or suggestion you can:
+	If you’ve got a question, idea or suggestion you can
+	<a href="https://github.com/alphagov/govuk-design-system-backlog/issues/{{ issue }}">
+        discuss this page on GitHub
+    </a>.
 </p>
+{% endif %}
+
+
+<!--
 <ul class="govuk-list govuk-list--bullet">
 {% if issue %}
 <li>
@@ -19,4 +29,5 @@
 		email the GOV.UK Design System team
 	</a>
 </li>
+-->
 </ul>
