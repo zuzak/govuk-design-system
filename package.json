@@ -23,7 +23,8 @@
   },
   "standard": {
     "ignore": [
-      "/src/javascripts/vendor/"
+      "/src/javascripts/vendor/",
+      "/src/components/tabbed-panel/"
     ]
   },
   "dependencies": {
