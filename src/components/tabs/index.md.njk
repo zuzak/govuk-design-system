@@ -11,30 +11,32 @@ statusMessage: This component is currently experimental because <a class="govuk-
 
 {% from "_example.njk" import example %}
 
-The tabs component lets users navigate between related content sections, and shows which one is currently selected. 
+The tabs component lets users navigate between related sections of content, displaying one section at a time. 
 
 {{ example({group: 'components', item: 'tabs', example: 'default', html: true, nunjucks: true, open: false}) }}
 
-## When to use this component
+## When to use this component 
 
-Tabs create a risk that users will only see content on the visible tab, and not on the others, so you should consider other options first. 
-
-They can be a helpful way of letting users quickly switch between related information if:
+Tabs can be a helpful way of letting users quickly switch between related information if:
 
 - your content can be usefully separated into clearly labelled sections
 - the first section is relevant to the majority of users
-- users won’t need to view all sections in order
+- the remaining sections are relevant to a minority of users
+- users won’t need to view all the sections at once
 
 Tabs can work well for people who use a service regularly, for example, users of a caseworking system. Their need to perform tasks quickly may be greater than their need for simplicity of first-time use.
 
 ## When not to use this component
 
-Do not use the tabs component if the total amount of content it contains will make the page slow to load. For this reason, do not use the tabs component to switch between whole pages. 
+Tabs hide content from users and not everyone will understand how they work first time.
 
-Do not use tabs if your users might need to:
+Do not use tabs if your users need to:
 
+- use your service only very occasionally
 - read through all of the content in order, for example, to understand a step-by-step process
 - compare information in different tabs - having to memorise the information and switch backwards and forwards can be frustrating and difficult
+
+Do not use the tabs component if the total amount of content the tabs contain will make the page slow to load. For this reason, do not use the tabs component as a form of page navigation. 
 
 Test your content without tabs first. Consider if it’s better to:
 
@@ -59,13 +61,22 @@ Tabs hide content, so the tab labels need to make it very clear what they link t
 
 If you struggle to come up with clear labels, it might be because the way you’ve separated the content isn’t clear. 
 
+
 ### Order the tabs according to user needs
 
 The first tab should be the most commonly-needed section. Arrange the other tabs in the order that makes most sense for your users.
 
+
 ### Do not disable tabs
 
 Disabling elements is normally confusing for users. If there is no content for a tab, either remove the tab or, if that would be confusing for your users, explain why there is no content when the tab is selected.
+
+
+### Avoid sets of tabs that wrap over multiple lines
+
+If you use too many tabs or they have long labels then they may wrap over multiple lines. This makes it harder for users to understand the connection between the selected tab and it's content.
+ 
+
 
 ## Research and testing
 
@@ -76,19 +87,10 @@ The design, code and guidance here are based on recommendations from [Inclusive 
 - Manage bereavement support payment
 - Support for check your state pension
 - Access to work integrated system
-- Bank holidays
+- Bank holidays (GDS)
 - Universal Credit (DWP)
-- Criminal Justice Services (CPP):
-  - Prosecutors
-  - Legal Advisers
-  - Court Administrators
-  - Online reporting (SJP performance data)
-- Judiciary UI internal systems (HMCTS):
-  - Divorce
-  - Civil Money Claims
-  - Financial Remedy
-  - Continuous Online Resolution (COR)
-  - Court Case Date (CCD)
+- Criminal Justice Services (CPP)
+- Judiciary UI internal systems (HMCTS)
 - Rural Payments (Defra)
 
 ### Browser testing
